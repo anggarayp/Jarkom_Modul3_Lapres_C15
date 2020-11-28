@@ -199,9 +199,9 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
 ### 6. Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
 
 ### 7. User autentikasi milik Anri memiliki format:
-    ● User : userta_yyy
-    ● Password : inipassw0rdta_yyy
-    Keterangan : yyy adalah nama kelompok masing-masing. Contoh: userta_c01
+   User : userta_yyy
+   Password : inipassw0rdta_yyy
+   Keterangan : yyy adalah nama kelompok masing-masing. Contoh: userta_c01
     
    Pertama, akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA.
    
