@@ -243,10 +243,6 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   - Install apache2-utils : ```apt-get install apache2-utils```
   
-  - Setting Proxy pada setting Windows/ browser (Firefox/Chrome)
-  
-  Dengan memasukkan ip Mojokerto : ```10.151.77.131```
-  
   - Buat user dan password : ``` htpasswd -c /etc/squid/passwd userta_c15```
   
   - Ketik password (inipassw0rdta_c15)
@@ -262,6 +258,10 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/7.png)
   
   - Restart squid : ```service squid restart```
+  
+  - Setting Proxy pada setting Windows/ browser (Firefox)
+  
+  Dengan memasukkan ip Mojokerto : ```10.151.77.131```
   
   - Hasilnya akan seperti ini ketika proxy menggunakan MOJOKERTO sebagai host
   
