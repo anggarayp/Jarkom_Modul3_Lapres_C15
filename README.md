@@ -195,8 +195,35 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
 
 ### SOAL NO 3 4 5 6
   
-  setting subnet dhcp file dhcpd.conf di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
+  Setting subnet dhcp file **dhcpd.conf** di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
   
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5a.png)
+  
+  ```
+  subnet 192.168.0.0 netmask 255.255.255.0 {
+    range 192.168.0.10 192.168.0.100;
+    range 192.168.0.110 192.168.0.200;
+    option routers 10.151.77.129;
+    option broadcast-address 192.168.0.255;
+    option domain-name-servers 10.151.77.130, 202.46.129.2;
+    default-lease-time 300;
+    max-lease-time 600;
+ }
+
+ subnet 192.168.1.0 netmask 255.255.255.0 {
+     range 192.168.1.50 192.168.1.70;
+     option routers 10.151.77.129;
+     option broadcast-address 192.168.1.255;
+     option domain-name-servers 10.151.77.130, 202.46.129.2;
+     default-lease-time 600;
+     max-lease-time 1200;
+ }
+ ```
+ 
+ Lalu ```cat /etc/resolv.conf``` apakah sudah sesuai konfigurasi di DHCP.
+ 
+ ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5b.png)
+ 
 ### SOAL NO 7
  Akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA. User autentikasi milik Anri memiliki format:
  User : userta_yyy
