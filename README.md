@@ -202,8 +202,8 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   Setting subnet dhcp file **dhcp.conf** dengan cara ```nano /etc/dhcp/dhcpd.conf``` di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
   
-  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5a.png)
-  
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/3.png)
+    
   ```
   subnet 192.168.0.0 netmask 255.255.255.0 {
     range 192.168.0.10 192.168.0.100;
@@ -225,6 +225,8 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
  }
  ```
  
+ ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5a.png)
+ 
  Lalu ```cat /etc/resolv.conf``` untuk mengecek apakah sudah sesuai konfigurasi di DHCP.
  
  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5b.png)
@@ -240,6 +242,10 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   - Install squid : ```apt-get install squid -y```
   
   - Install apache2-utils : ```apt-get install apache2-utils```
+  
+  - Setting Proxy pada setting Windows/ browser (Firefox/Chrome)
+  
+  Dengan memasukkan ip Mojokerto : ```10.151.77.131```
   
   - Buat user dan password : ``` htpasswd -c /etc/squid/passwd userta_c15```
   
@@ -269,6 +275,10 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   - Edit file konfigurasi tersebut
   
+  ```
+  acl AVAILABLE_WORKING time TW 13:00-19:00
+  ```
+  
   ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8%209.png)
   
   - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
@@ -287,6 +297,11 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   - Buat file konfigurasi : ```nano /etc/squid/acl.conf```
   
   - Edit file konfigurasi tersebut
+  
+  ```
+  acl BIMBINGAN_NIGHT_TIME time TWH 21:00-23:59
+  acl BIMBINGAN_MORNING_TIME time WHF 00:00-09:00
+  ```
   
   ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8%209.png)
   
@@ -344,6 +359,8 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/12a.PNG)
   
   - Restart bind : ```service bind9 restart```
+  
+  - Ganti settingan proxy pada Windows atau pada browser (Firefox) dengan mengganti IP mojokerto dengan ```janganlupa-ta.c15.pw```
   
   - Ketika proxy menggunakan janganlupa-ta.c15.pw, hasilnya akan seperti ini :
   
