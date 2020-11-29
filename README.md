@@ -233,7 +233,7 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
   
-  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8a.PNG)
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8.PNG)
   
   - Restart squid : ```service squid restart```
   - Hasilnya akan seperti ini ketika mencoba akses internet diluar Selasa jam 13.00 - 18.00
@@ -249,7 +249,7 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
   
-  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8a.PNG)
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8.PNG)
   
   - Restart squid : ```service squid restart```
   
