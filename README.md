@@ -183,10 +183,15 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   - ```nano /etc/sysctl.conf``` lalu hilangkan tanda pagar (#) pada bagian ```net.ipv4.ip_forward=1```
   
   - Install dchp relay : ```apt-get install isc-dhcp-relay -y```
+  - Edit agar SURABAYA bisa melakukan relay dari server TUBAN ```nano /etc/default/isc-dhcp-relay``` 
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/2.png)
 
 -- TUBAN
 
   - Install dhcp server : ```apt-get install isc-dhcp-server -y```
+  - Edit file server :```nano /etc/default/isc-dhcp-server``` 
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/2a.png)
+  - Restart dhcp server : ```service isc-dhcp-server restart```
 
 ### SOAL NO 3 4 5 6
   
@@ -197,18 +202,69 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
  User : userta_yyy
  Password : inipassw0rdta_yyy
  Keterangan : yyy adalah nama kelompok masing-masing. Contoh: userta_c01
-   
 
-### SOAL NO 7
+-- MOJOKERTO
 
+  - Install squid : ```apt-get install squid -y```
+  - Install apache2-utils : ```apt-get install apache2-utils```
+  - Buat user dan password : ``` htpasswd -c /etc/squid/passwd userta_c15```
+  - Ketik password (inipassw0rdta_c15)
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/7b.png)
+  - Backup file konfigurasi squid :```mv /etc/squid/squid.conf /etc/squid/squid.conf.bak```
+  - Buat file konfigurasi squid baru : ```nano /etc/squid/squid.conf```
+  - Masukkan konfigurasi berikut ke squid.conf 
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/7.png)
+  - Restart squid : ```service squid restart```
+  - Hasilnya akan seperti ini ketika proxy menggunakan MOJOKERTO sebagai host
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/7c.png)
+  
 ### SOAL NO 8
-
+-- MOJOKERTO
+  - Buat file konfigurasi : ```nano /etc/squid/acl.conf```
+  - Edit file konfigurasi tersebut
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8%209.png)
+  - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8a.png)
+  - Restart squid : ```service squid restart```
+  - Hasilnya akan seperti ini ketika mencoba akses internet diluar Selasa jam 13.00 - 18.00
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8.png)
+  
 ### SOAL NO 9
-
+-- MOJOKERTO
+  - Buat file konfigurasi : ```nano /etc/squid/acl.conf```
+  - Edit file konfigurasi tersebut
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8%209.png)
+  - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/8a.png)
+  - Restart squid : ```service squid restart```
+  
 ### SOAL NO 10
-
+-- MOJOKERTO
+  - Edit file konfigurasi squid : ```nano /etc/squid/squid.conf```
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/10.png)
+  - Restart squid : ```service squid restart```
+  - Tiap mencoba mengakses google akan diredirect ke monta.if.its.ac.id
+  
 ### SOAL NO 11
-
+-- MOJOKERTO
+  - Pindah ke directory errors : ```cd /usr/share/squid/errors/en```
+  - Download file error page : ```wget 10.151.36.202/ERR_ACCESS_DENIED```
+  - Remove file error yang lama : ```rm ERR_ACCESS_DENIED```
+  - Rename file error yang baru : ```mv ERR_ACCESSS_DENIED.1 ERR_ACCESSS_DENIED```
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/11a.png)
+  - Restart squid : ```service squid restart```
+  - Error page akan menjadi seperti berikut :
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/11.png)
+  
 ### SOAL NO 12
-
-Buat domain di Malang tapi ngarahin ke Tuban
+-- MALANG
+  - Install bind : ```apt-get install bind9 -y```
+  - Edit file konfigurasi : ```nano /etc/bind/named.conf.local```
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/12b.png)
+  - Buat folder dalam /etc/bind : ```mkdir /etc/bind/ta```
+  - Copy file db.local ke /etc/bind/ta : ```cp /etc/bind/db.local /etc/bind/ta/janganlupa-ta.c15.pw```
+  - Edit file janganlupa-ta.c15.pw : ```nano /etc/bind/ta/janganlupa-ta.c15.pw
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/12a.png)
+  - Restart bind : ```service bind9 restart```
+  - Ketika proxy menggunakan janganlupa-ta.c15.pw, hasilnya akan seperti ini :
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/12.png)
