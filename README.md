@@ -195,7 +195,7 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
 
 ### SOAL NO 3 4 5 6
   
-  Setting subnet dhcp file **dhcpd.conf** di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
+  Setting subnet dhcp file **dhcp.conf** dengan cara ```nano /etc/dhcp/dhcpd.conf``` di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
   
   ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5a.png)
   
@@ -220,7 +220,7 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
  }
  ```
  
- Lalu ```cat /etc/resolv.conf``` apakah sudah sesuai konfigurasi di DHCP.
+ Lalu ```cat /etc/resolv.conf``` untuk mengecek apakah sudah sesuai konfigurasi di DHCP.
  
  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/5b.png)
  
