@@ -202,9 +202,20 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
   
   Setting subnet dhcp file **dhcp.conf** dengan cara ```nano /etc/dhcp/dhcpd.conf``` di UML Tuban, lalu ubah isinya sesuai dengan range di soal.
   
-  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/3.png)
+  ![image](https://github.com/anggarayp/Jarkom_Modul3_Lapres_C15/blob/main/Screenshots/3b.PNG)
     
   ```
+  subnet 10.151.77.0 netmask 255.255.255.0 {
+    authoritative;
+    range 10.151.77.132 10.151.77.140;
+    default-lease-time 3600;
+    max-lease-time 3600;
+    option subnet-mask 255.255.255.0;
+    option broadcast-address 10.151.77.255;
+    option routers 10.151.77.132;
+    option domain-name-servers 8.8.8.8;
+}
+
   subnet 192.168.0.0 netmask 255.255.255.0 {
     range 192.168.0.10 192.168.0.100;
     range 192.168.0.110 192.168.0.200;
